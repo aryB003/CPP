@@ -55,12 +55,35 @@ int	main(void)
 			delete zoo[k];
 	}
 
-	std::cout << std::endl << "===== Copies (OCF) =====" << std::endl;
+	std::cout << std::endl << "===== Dog copy + assignment =====" << std::endl;
 	{
 		Dog	dog;
 		Dog	copy(dog);
+		Dog	assigned;
+
+		assigned = dog;
+		std::cout << copy.getType() << " / " << assigned.getType() << std::endl;
+		copy.makeSound();
+		assigned.makeSound();
+	}
+
+	std::cout << std::endl << "===== Cat copy + assignment =====" << std::endl;
+	{
 		Cat	cat;
+		Cat	copy(cat);
 		Cat	assigned;
+
+		assigned = cat;
+		std::cout << copy.getType() << " / " << assigned.getType() << std::endl;
+		copy.makeSound();
+		assigned.makeSound();
+	}
+
+	std::cout << std::endl << "===== WrongCat copy + assignment =====" << std::endl;
+	{
+		WrongCat	cat;
+		WrongCat	copy(cat);
+		WrongCat	assigned;
 
 		assigned = cat;
 		std::cout << copy.getType() << " / " << assigned.getType() << std::endl;
